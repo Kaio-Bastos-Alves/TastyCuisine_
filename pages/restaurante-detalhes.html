@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Perfil do Chefe - Tasty Cuisine</title>
-  <link rel="stylesheet" href="perfil-chefe.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <title>Detalhes do Restaurante | Tasty Cuisine</title>
+  <link rel="stylesheet" href="../css/restaurante-detalhes.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-1ycn6Ica999Y6WvXzrY7qlIkhxOjDBK2yChMoqkE49MxdPHaNm9m+8/tpNZYszy1xPgtZ2fH1KspTnxjv5lG1g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
     <h1 class="logo">Tasty Cuisine</h1>
     <nav>
       <ul class="menu">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="receitas.html">Receitas</a></li>
         <li><a href="por_ingredientes.html">Por Ingredientes</a></li>
         <li><a href="dicas_saudaveis.html">Dicas Saudáveis</a></li>
-        <li><a href="chefes.html" class="active">Chefes</a></li>
+        <li><a href="chefes.html">Chefes</a></li>
         <li><a href="restaurantes.html">Restaurantes</a></li>
         <li><a href="consulta.html">Consulta</a></li>
         <li><a href="sobre.html">Sobre</a></li>
@@ -28,32 +34,21 @@
   </header>
 
   <main>
-    <section class="perfil-chefe">
-      <div class="chefe-header">
-        <img id="chefe-foto" src="" alt="Foto do Chefe" />
-        <div class="chefe-info">
-          <h2 id="chefe-nome"></h2>
-          <p id="chefe-especialidade"></p>
-          <p id="chefe-restaurante"></p>
-        </div>
+    <div class="voltar">
+      <a href="restaurantes.html"><i class="fas fa-arrow-left"></i> Voltar aos restaurantes</a>
+    </div>
+
+    <div class="restaurante-detalhes" id="restaurante-info">
+      <!-- Conteúdo será carregado via JavaScript -->
+    </div>
+
+    <div class="mapa-container">
+      <h3>Localização</h3>
+      <div id="mapa" class="mapa-placeholder">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Mapa da localização do restaurante</p>
       </div>
-      
-      <div class="chefe-detalhes">
-        <h3>Sobre o Chefe</h3>
-        <p id="chefe-descricao"></p>
-        
-        <h3>Especialidades</h3>
-        <ul id="chefe-especialidades-lista"></ul>
-        
-        <h3>Contato</h3>
-        <div class="chefe-contato">
-          <p><i class="fas fa-envelope"></i> <span id="chefe-email"></span></p>
-          <p><i class="fas fa-phone"></i> <span id="chefe-telefone"></span></p>
-        </div>
-      </div>
-    </section>
-    
-    <a href="chefes.html" class="btn-voltar">← Voltar para Chefes</a>
+    </div>
   </main>
 
   <footer>
@@ -71,7 +66,7 @@
       <i class="fab fa-instagram"></i>
     </div>
   </footer>
-  
-  <script src="perfil-chefe.js"></script>
+
+  <script src="../js/restaurante-detalhes.js"></script>
 </body>
 </html>
