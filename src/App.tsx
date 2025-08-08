@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Publicar from './pages/Publicar'
 import Contato from './pages/Contato'
+import Receitas from './pages/Receitas'
 
 const App: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/publicar" element={<Publicar />} />
           <Route path="/contato" element={<Contato />} />
-          <Route path="/receitas" element={<div>Receitas - Em desenvolvimento</div>} />
+          <Route path="/receitas" element={<Receitas />} />
           <Route path="/por-ingredientes" element={<div>Por Ingredientes - Em desenvolvimento</div>} />
           <Route path="/dicas-saudaveis" element={<div>Dicas Saudáveis - Em desenvolvimento</div>} />
           <Route path="/chefes" element={<div>Chefes - Em desenvolvimento</div>} />
