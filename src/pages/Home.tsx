@@ -1,8 +1,22 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { MOCK_RECIPES } from '../data/recipes'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
+
+  const sorted = [...MOCK_RECIPES].sort((a, b) => b.likes - a.likes)
+  const maisAmadas = sorted.slice(0, 4)
+  const emAlta = sorted.slice(4)
+
+  const tagClass = (cat: string) => (
+    cat === 'Sobremesas Saudáveis' ? 'rosa' :
+    cat === 'Café da Manhã' ? 'verde' :
+    cat === 'Marmitas Fit' ? 'lilas' :
+    cat === 'Veganas' ? 'lavanda' :
+    cat === 'Detox' ? 'verde' :
+    cat === 'Low Carb' ? 'lilas' : 'roxo'
+  )
 
   return (
     <>
@@ -39,6 +53,32 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="mais-amadas">
+        <div className="secao-topo">
+          <h2>Mais amadas da semana</h2>
+        </div>
+        <div className="carrossel-container">
+          <button className="carrossel-btn prev">‹</button>
+          <div className="carrossel">
+            {maisAmadas.map(r => (
+              <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
+                <div className="imagem-receita"></div>
+                <span className={`tag ${tagClass(r.category)}`}>{r.category}</span>
+                <h2>{r.title}</h2>
+                <div className="info-receita">
+                  <span>🕒 {r.time}</span>
+                  <span>⚙ {r.difficulty}</span>
+                  <span>❤ {r.likes}</span>
+                </div>
+                <button className="ver-receita" onClick={() => navigate('/receitas')}>Ver Receita</button>
+                <span className="favorito ativo">❤</span>
+              </article>
+            ))}
+          </div>
+          <button className="carrossel-btn next">›</button>
+        </div>
+      </section>
+
       <section className="receitas-em-alta">
         <div className="secao-topo">
           <h2>Receitas em Alta</h2>
@@ -46,18 +86,20 @@ const Home: React.FC = () => {
         <div className="carrossel-container">
           <button className="carrossel-btn prev">‹</button>
           <div className="carrossel">
-            <div className="card-receita">
-              <div className="imagem-receita"></div>
-              <span className="tag rosa">Sobremesas Saudáveis</span>
-              <h2>Bolo de Chocolate Fit</h2>
-              <div className="info-receita">
-                <span>🕒 30 min</span>
-                <span>⚙ Fácil</span>
-                <span>❤ 150</span>
-              </div>
-              <button className="ver-receita">Ver Receita</button>
-              <span className="favorito ativo">❤</span>
-            </div>
+            {emAlta.map(r => (
+              <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
+                <div className="imagem-receita"></div>
+                <span className={`tag ${tagClass(r.category)}`}>{r.category}</span>
+                <h2>{r.title}</h2>
+                <div className="info-receita">
+                  <span>🕒 {r.time}</span>
+                  <span>⚙ {r.difficulty}</span>
+                  <span>❤ {r.likes}</span>
+                </div>
+                <button className="ver-receita" onClick={() => navigate('/receitas')}>Ver Receita</button>
+                <span className="favorito ativo">❤</span>
+              </article>
+            ))}
           </div>
           <button className="carrossel-btn next">›</button>
         </div>
