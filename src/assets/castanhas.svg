@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#8D6E63" opacity="0.3"/>
+  <ellipse cx="85" cy="90" rx="12" ry="18" fill="#8D6E63"/>
+  <ellipse cx="115" cy="95" rx="14" ry="20" fill="#A1887F"/>
+  <ellipse cx="100" cy="115" rx="13" ry="19" fill="#795548"/>
+  <ellipse cx="85" cy="90" rx="8" ry="12" fill="#A1887F"/>
+  <ellipse cx="115" cy="95" rx="9" ry="14" fill="#BCAAA4"/>
+  <ellipse cx="100" cy="115" rx="8" ry="13" fill="#8D6E63"/>
+  <text x="100" y="170" text-anchor="middle" fill="#5D4037" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Castanhas</text>
+</svg>

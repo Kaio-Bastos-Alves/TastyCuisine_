@@ -625,12 +625,23 @@ footer h3 {
 }
 
 .imagem-receita {
-  background: #eee url('assets/placeholder.jpg') center/cover no-repeat;
+  background: #eee;
   height: 160px;
   width: 100%;
   border-radius: 1rem;
   margin-bottom: 0.8rem;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-receita img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 
@@ -799,6 +810,56 @@ footer h3 {
   margin: 0 auto 0.5rem;
   border: 2px solid var(--accent-pink);
   transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.img-placeholder img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Fallback para quando a imagem não carrega */
+.img-placeholder:empty::before,
+.img-placeholder .fallback-icon {
+  content: "🥗";
+  font-size: 2rem;
+  color: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.fallback-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent-pink);
+}
+
+/* Hover effect para os cards de ingredientes */
+.grid-cards .card:hover .img-placeholder {
+  transform: scale(1.1);
+  border-color: var(--accent-lilac);
+}
+
+.grid-cards .card:hover .img-placeholder img {
+  transform: scale(1.05);
 }
 
 

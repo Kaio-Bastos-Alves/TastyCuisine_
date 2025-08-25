@@ -1,0 +1,21 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#4CAF50" opacity="0.3"/>
+  <ellipse cx="100" cy="120" rx="45" ry="25" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+  <g fill="#4CAF50">
+    <ellipse cx="85" cy="110" rx="3" ry="6"/>
+    <ellipse cx="95" cy="115" rx="3" ry="6"/>
+    <ellipse cx="105" cy="110" rx="3" ry="6"/>
+    <ellipse cx="115" cy="115" rx="3" ry="6"/>
+  </g>
+  <g fill="#FFE135">
+    <circle cx="90" cy="120" r="2"/>
+    <circle cx="100" cy="118" r="2"/>
+    <circle cx="110" cy="122" r="2"/>
+  </g>
+  <g fill="#F44336">
+    <circle cx="88" cy="125" r="1"/>
+    <circle cx="112" cy="128" r="1"/>
+  </g>
+  <text x="100" y="170" text-anchor="middle" fill="#2E7D32" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Salada Quinoa</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#8D6E63" opacity="0.3"/>
+  <ellipse cx="100" cy="120" rx="45" ry="25" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+  <ellipse cx="85" cy="110" rx="18" ry="8" fill="#8D6E63"/>
+  <ellipse cx="85" cy="108" rx="16" ry="6" fill="#A1887F"/>
+  <g fill="#FFC107">
+    <circle cx="110" cy="105" r="2"/>
+    <circle cx="120" cy="110" r="2"/>
+    <circle cx="105" cy="115" r="2"/>
+    <circle cx="115" cy="120" r="2"/>
+    <circle cx="125" cy="115" r="2"/>
+  </g>
+  <g fill="#4CAF50">
+    <ellipse cx="115" cy="100" rx="2" ry="4"/>
+    <ellipse cx="125" cy="105" rx="2" ry="4"/>
+  </g>
+  <text x="100" y="170" text-anchor="middle" fill="#5D4037" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Peru Quinoa</text>
+</svg>

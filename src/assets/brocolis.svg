@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#4CAF50" opacity="0.3"/>
+  <rect x="95" y="120" width="10" height="30" fill="#8BC34A"/>
+  <circle cx="85" cy="90" r="12" fill="#4CAF50"/>
+  <circle cx="100" cy="85" r="15" fill="#4CAF50"/>
+  <circle cx="115" cy="90" r="12" fill="#4CAF50"/>
+  <circle cx="90" cy="105" r="10" fill="#4CAF50"/>
+  <circle cx="110" cy="105" r="10" fill="#4CAF50"/>
+  <circle cx="100" cy="100" r="8" fill="#4CAF50"/>
+  <g fill="#66BB6A">
+    <circle cx="85" cy="90" r="8"/>
+    <circle cx="100" cy="85" r="10"/>
+    <circle cx="115" cy="90" r="8"/>
+    <circle cx="90" cy="105" r="6"/>
+    <circle cx="110" cy="105" r="6"/>
+    <circle cx="100" cy="100" r="5"/>
+  </g>
+  <text x="100" y="170" text-anchor="middle" fill="#2E7D32" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Brócolis</text>
+</svg>

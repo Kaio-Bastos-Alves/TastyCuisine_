@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#FFF176" opacity="0.3"/>
+  <ellipse cx="100" cy="100" rx="40" ry="30" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="100" rx="35" ry="25" fill="#FFF9C4"/>
+  <rect x="80" y="90" width="40" height="8" fill="#4CAF50"/>
+  <rect x="85" y="100" width="30" height="6" fill="#F44336"/>
+  <rect x="90" y="108" width="20" height="4" fill="#FFE135"/>
+  <g fill="#FF9800">
+    <circle cx="95" cy="85" r="2"/>
+    <circle cx="105" cy="87" r="2"/>
+  </g>
+  <text x="100" y="170" text-anchor="middle" fill="#F57F17" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Tapioca Fit</text>
+</svg>

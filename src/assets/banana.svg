@@ -1,0 +1,8 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#F6F6F6"/>
+  <circle cx="100" cy="100" r="80" fill="#FFE135" opacity="0.3"/>
+  <path d="M80 60 Q100 50 120 60 Q125 80 120 120 Q100 140 80 120 Q75 80 80 60 Z" fill="#FFE135"/>
+  <path d="M85 65 Q100 58 115 65 Q118 80 115 115 Q100 130 85 115 Q82 80 85 65 Z" fill="#FFF176"/>
+  <ellipse cx="100" cy="55" rx="8" ry="4" fill="#8BC34A"/>
+  <text x="100" y="170" text-anchor="middle" fill="#F57F17" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Banana</text>
+</svg>

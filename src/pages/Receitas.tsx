@@ -61,7 +61,9 @@ const Receitas: React.FC = () => {
       <section className="grid-receitas">
         {receitasFiltradas.map(r => (
           <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
-            <div className="imagem-receita" />
+            <div className="imagem-receita">
+              <img src={r.image} alt={r.title} />
+            </div>
             <span className={`tag ${
               r.category === 'Sobremesas Saudáveis' ? 'rosa' :
               r.category === 'Café da Manhã' ? 'verde' :

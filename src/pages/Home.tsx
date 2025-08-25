@@ -149,7 +149,9 @@ const Home: React.FC = () => {
           >
             {maisAmadas.map(r => (
               <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
-                <div className="imagem-receita"></div>
+                <div className="imagem-receita">
+                  <img src={r.image} alt={r.title} />
+                </div>
                 <span className={`tag ${tagClass(r.category)}`}>{r.category}</span>
                 <h2>{r.title}</h2>
                 <div className="info-receita">
@@ -212,7 +214,9 @@ const Home: React.FC = () => {
           >
             {emAlta.map(r => (
               <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
-                <div className="imagem-receita"></div>
+                <div className="imagem-receita">
+                  <img src={r.image} alt={r.title} />
+                </div>
                 <span className={`tag ${tagClass(r.category)}`}>{r.category}</span>
                 <h2>{r.title}</h2>
                 <div className="info-receita">
@@ -278,7 +282,9 @@ const Home: React.FC = () => {
           >
             {receitasRapidas.map(r => (
               <article key={r.id} className="card-receita" role="article" aria-label={r.title}>
-                <div className="imagem-receita"></div>
+                <div className="imagem-receita">
+                  <img src={r.image} alt={r.title} />
+                </div>
                 <span className={`tag ${tagClass(r.category)}`}>{r.category}</span>
                 <h2>{r.title}</h2>
                 <div className="info-receita">
