@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { useFavoritos } from '../contexts/FavoritosContext'
 import { MOCK_RECIPES } from '../data/recipes'
 
 const CATEGORIES = [
@@ -15,16 +16,7 @@ const CATEGORIES = [
 const Receitas: React.FC = () => {
   const [busca, setBusca] = useState('')
   const [categoria, setCategoria] = useState<string>('Todos')
-  const [favoritos, setFavoritos] = useState<Set<number>>(new Set())
-
-  const toggleFavorito = (id: number) => {
-    setFavoritos(prev => {
-      const novo = new Set(prev)
-      if (novo.has(id)) novo.delete(id)
-      else novo.add(id)
-      return novo
-    })
-  }
+  const { favoritos, toggleFavorito } = useFavoritos()
 
   const receitasFiltradas = useMemo(() => {
     return MOCK_RECIPES.filter(r => {
@@ -46,7 +38,11 @@ const Receitas: React.FC = () => {
             value={busca}
             onChange={e => setBusca(e.target.value)}
           />
-          <button type="submit" className="search-icon" aria-label="Buscar">🔍</button>
+          <button type="submit" className="search-icon" aria-label="Buscar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </form>
       </section>
 
