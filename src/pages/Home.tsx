@@ -2,6 +2,22 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFavoritos } from '../contexts/FavoritosContext'
 import { MOCK_RECIPES } from '../data/recipes'
+// Imagens de ingredientes
+import aveiaImg from '../assets/aveia.svg'
+import chiaImg from '../assets/chia.svg'
+import bananaImg from '../assets/banana.svg'
+import cacauImg from '../assets/cacau.svg'
+import abacateImg from '../assets/abacate.svg'
+import brocolisImg from '../assets/brocolis.svg'
+import gengibreImg from '../assets/gengibre.svg'
+import melImg from '../assets/mel.svg'
+import uvaImg from '../assets/uva.svg'
+import tofuImg from '../assets/tofu.svg'
+import peixeImg from '../assets/peixe.svg'
+import castanhasImg from '../assets/castanhas.svg'
+import linhacaImg from '../assets/linhaca.svg'
+import macaImg from '../assets/maca.svg'
+import cenouraImg from '../assets/cenoura.svg'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
@@ -23,6 +39,24 @@ const Home: React.FC = () => {
     const timeInMinutes = parseInt(r.time.split(' ')[0])
     return timeInMinutes <= 15
   }).slice(0, 12)
+
+  const ingredientesHome = [
+    { nome: 'Aveia', imagem: aveiaImg },
+    { nome: 'Chia', imagem: chiaImg },
+    { nome: 'Banana', imagem: bananaImg },
+    { nome: 'Cacau', imagem: cacauImg },
+    { nome: 'Abacate', imagem: abacateImg },
+    { nome: 'Brócolis', imagem: brocolisImg },
+    { nome: 'Gengibre', imagem: gengibreImg },
+    { nome: 'Mel', imagem: melImg },
+    { nome: 'Uva', imagem: uvaImg },
+    { nome: 'Tofu', imagem: tofuImg },
+    { nome: 'Peixe', imagem: peixeImg },
+    { nome: 'Castanhas', imagem: castanhasImg },
+    { nome: 'Linhaça', imagem: linhacaImg },
+    { nome: 'Maçã', imagem: macaImg },
+    { nome: 'Cenoura', imagem: cenouraImg }
+  ]
 
   const tagClass = (cat: string) => (
     cat === 'Sobremesas Saudáveis' ? 'rosa' :
@@ -332,14 +366,14 @@ const Home: React.FC = () => {
       <section className="ingredientes">
         <h2>Ingredientes da Natureza</h2>
         <div className="scroll-h">
-          <div className="card">
-            <div className="img-placeholder"></div>
-            <p>Aveia</p>
-          </div>
-          <div className="card">
-            <div className="img-placeholder"></div>
-            <p>Chia</p>
-          </div>
+          {ingredientesHome.map((ing) => (
+            <div className="card" key={ing.nome}>
+              <div className="img-placeholder">
+                <img src={ing.imagem} alt={ing.nome} />
+              </div>
+              <p>{ing.nome}</p>
+            </div>
+          ))}
         </div>
       </section>
 

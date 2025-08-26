@@ -182,7 +182,7 @@ const Perfil: React.FC = () => {
                     onChange={(e) => handleInputChange('dataNascimento', e.target.value)}
                   />
                 ) : (
-                  <span>{new Date(perfil.dataNascimento).toLocaleDateString('pt-BR')}</span>
+                  <span>{perfil.dataNascimento ? new Date(perfil.dataNascimento).toLocaleDateString('pt-BR') : '-'}</span>
                 )}
               </div>
 
@@ -252,7 +252,9 @@ const Perfil: React.FC = () => {
               <div className="favoritos-grid">
                 {receitasFavoritas.map(receita => (
                   <article key={receita.id} className="card-receita-favorita">
-                    <div className="imagem-receita"></div>
+                    <div className="imagem-receita">
+                      <img src={receita.image} alt={receita.title} />
+                    </div>
                     <span className={`tag ${tagClass(receita.category)}`}>
                       {receita.category}
                     </span>

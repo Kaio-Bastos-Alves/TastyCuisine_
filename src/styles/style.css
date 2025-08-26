@@ -1,18 +1,18 @@
 /* Variáveis de tema */
 :root {
-  /* Nova paleta de cores */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #FEC8D8;
-  --text-primary: #333333;
-  --text-secondary: #5f5f5f;
-  --accent-mint: #C8E6C9;
-  --accent-pink: #F8BBDA;
-  --accent-lilac: #9B5DE5;
+  /* Paleta temática alimentícia (quente e natural) */
+  --bg-primary: #FFF8F1;
+  --bg-secondary: #FFE8D6;
+  --text-primary: #2F2A24;
+  --text-secondary: #6B5E51;
+  --accent-mint: #CDE8B2;  /* verde claro (folhas/ervas) */
+  --accent-pink: #F4A261;  /* laranja pêssego (frutas/tempero) */
+  --accent-lilac: #6A994E; /* verde principal */
   --card-bg: #FFFFFF;
   --shadow: rgba(0,0,0,0.05);
-  --lavanda: #E1D5F5;
-  --lilas-claro: #D7C2FF;
-  --cinza-claro: #F6F6F6;
+  --lavanda: #E7F2E9;      /* verde sálvia suave */
+  --lilas-claro: #FFE3C8;  /* pêssego claro */
+  --cinza-claro: #F2F2F2;
 }
 
 
@@ -43,6 +43,18 @@ html, body, #root {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+/* Wrapper fixo para manter as barras superiores grudadas no topo */
+.top-bars {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Evita que o conteúdo fique escondido atrás do header fixo em páginas com fundo colorido */
+.top-bars + * {
+  scroll-margin-top: 120px; /* melhora navegação por âncora */
 }
 
 header {
@@ -153,11 +165,11 @@ nav ul {
 }
 
 .btn-outline:hover {
-  background: #7C3AED;
-  border-color: #7C3AED;
+  background: #4C7A2F;
+  border-color: #4C7A2F;
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(155, 93, 229, 0.3);
+  box-shadow: 0 4px 8px rgba(106, 153, 78, 0.3);
 }
 
 .search-bar {
@@ -608,7 +620,7 @@ footer h3 {
 
 .nav-links .active {
   font-weight: bold;
-  color: #a24bff;
+  color: var(--accent-lilac);
 }
 
 .receitas-main {
@@ -651,7 +663,14 @@ footer h3 {
 .grid-receitas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
+}
+
+/* Ajuste para cards preencherem melhor a grade na página de receitas */
+.grid-receitas .card-receita {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 
@@ -760,7 +779,7 @@ footer h3 {
 
 /* Estilos para botão de favoritos na página de detalhes */
 #btn-favorito {
-  background: #a24bff;
+  background: var(--accent-lilac);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -775,7 +794,7 @@ footer h3 {
 }
 
 #btn-favorito:hover {
-  background: #8a3bcc;
+  background: #4C7A2F;
   transform: translateY(-2px);
 }
 
@@ -815,6 +834,13 @@ footer h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
+}
+
+/* Tamanho consistente para cards de restaurantes */
+.grid-cards .card img[alt] {
+  /* imagens de restaurantes e itens visuais padronizadas */
+  max-height: 180px;
+  object-fit: cover;
 }
 .card {
   background: var(--card-bg);
@@ -914,7 +940,7 @@ footer h3 {
   width: 100%;
   padding: 0.75rem;
   border-radius: 8px;
-  border: 1px solid #e0b0ff;
+  border: 1px solid #d8e5cc;
 }
 button {
   background-color: var(--accent-lilac);
@@ -1084,8 +1110,8 @@ button:hover {
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
   outline: none;
-  border-color: #9c27b0;
-  box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+  border-color: var(--accent-lilac);
+  box-shadow: 0 0 0 2px rgba(106, 153, 78, 0.2);
 }
 
 .formulario-contato button {
@@ -1122,7 +1148,7 @@ button:hover {
   padding: 1rem 1.5rem;
   border-radius: 16px;
   text-align: center;
-  color: #6a1b9a;
+  color: #5B3714;
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
@@ -1265,7 +1291,7 @@ button:hover {
 .botao-dica:hover {
   background: var(--accent-pink);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(156, 39, 176, 0.3);
+  box-shadow: 0 4px 8px rgba(106, 153, 78, 0.3);
 }
 
 /* Em telas grandes, reduza um pouco a largura dos cards para caber mais por linha */
