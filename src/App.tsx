@@ -11,6 +11,7 @@ import Receitas from './pages/Receitas'
 import Perfil from './pages/Perfil'
 import Sobre from './pages/Sobre'
 import PorIngredientes from './pages/PorIngredientes'
+import Consulta from './pages/Consulta'
 import './styles/perfil.css'
 
 const App: React.FC = () => {
@@ -30,7 +31,7 @@ const App: React.FC = () => {
               <Route path="/dicas-saudaveis" element={<div>Dicas Saudáveis - Em desenvolvimento</div>} />
               <Route path="/chefes" element={<div>Chefes - Em desenvolvimento</div>} />
               <Route path="/restaurantes" element={<div>Restaurantes - Em desenvolvimento</div>} />
-              <Route path="/consulta" element={<div>Consulta - Em desenvolvimento</div>} />
+              <Route path="/consulta" element={<Consulta />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/login" element={<div>Login - Em desenvolvimento</div>} />
             </Routes>

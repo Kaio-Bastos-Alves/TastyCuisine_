@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   const receitasRapidas = MOCK_RECIPES.filter(r => {
     const timeInMinutes = parseInt(r.time.split(' ')[0])
     return timeInMinutes <= 15
-  }).slice(0, 6)
+  }).slice(0, 12)
 
   const tagClass = (cat: string) => (
     cat === 'Sobremesas Saudáveis' ? 'rosa' :

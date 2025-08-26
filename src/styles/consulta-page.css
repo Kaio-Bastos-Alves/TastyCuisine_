@@ -1,0 +1,91 @@
+/* Estilos específicos da página de Consulta */
+
+.consulta-form {
+  max-width: 640px;
+  margin: 1rem auto 2rem;
+  padding: 1rem;
+  background: var(--lavanda);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+.consulta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.nutricionista-card {
+  text-align: left;
+}
+
+.nutricionista-card .avatar {
+  height: 80px;
+  width: 80px;
+  margin: 0 auto 0.75rem;
+  background: var(--lavanda);
+  border-color: var(--accent-lilac);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutricionista-card .initials {
+  font-weight: 700;
+  color: var(--accent-lilac);
+}
+
+.nutricionista-card .nome {
+  color: var(--accent-lilac);
+  text-align: center;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.nutricionista-card .especialidade {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.nutricionista-card .cidade,
+.nutricionista-card .telefone,
+.nutricionista-card .email {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.nutricionista-card .telefone a,
+.nutricionista-card .email a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.nutricionista-card .telefone a:hover,
+.nutricionista-card .email a:hover {
+  color: var(--accent-lilac);
+}
+
+.nutricionista-card .contato-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+/* Responsividade leve */
+@media (min-width: 1200px) {
+  .consulta-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.consulta-form .form-contato input {
+  background-color: var(--card-bg);
+}
+
+.consulta-form .form-contato button {
+  align-self: center;
+}
