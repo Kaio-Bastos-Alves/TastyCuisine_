@@ -23,7 +23,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 842,
     priceRange: '$$'
     ,address: 'Av. Paulista, 1000 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 1291,
     priceRange: '$$'
     ,address: 'R. dos Pinheiros, 500 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1553163147-622ab57be1c7?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 612,
     priceRange: '$$$'
     ,address: 'R. Augusta, 2500 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 473,
     priceRange: '$$'
     ,address: 'Av. Faria Lima, 4000 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 5,
@@ -63,7 +63,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 911,
     priceRange: '$$'
     ,address: 'R. Harmonia, 170 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1546549039-49dcd4f7aa4a?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 358,
     priceRange: '$$'
     ,address: 'R. Fradique Coutinho, 800 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 227,
     priceRange: '$$'
     ,address: 'Av. Ibirapuera, 3100 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1604908554007-8338d8b3b81f?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1498079022511-d15614cb1c02?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 8,
@@ -93,7 +93,7 @@ const RESTAURANTS: Restaurant[] = [
     reviews: 504,
     priceRange: '$$$'
     ,address: 'Av. Pacaembu, 1200 - São Paulo, SP',
-    image: 'https://images.unsplash.com/photo-1544025162-705f6e4d23ae?q=80&w=1200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop'
   }
 ]
 
@@ -111,6 +111,8 @@ const Restaurantes: React.FC = () => {
             <img 
               src={r.image} 
               alt={r.name} 
+              loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: 12 }}
               onError={(e) => { e.currentTarget.src = placeholderImg }}
             />
