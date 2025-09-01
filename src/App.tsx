@@ -67,9 +67,9 @@ const UserBar: React.FC<{ user: User; onLogout: () => void }> = ({ user, onLogou
     navigate('/login', { replace: true })
   }
   return (
-    <div style={{ background: '#111827', color: '#e5e7eb', padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <div style={{ fontSize: 14 }}>Bem-vindo(a), <strong>{user.name}</strong></div>
-      <button onClick={handleLogout} style={{ background: '#ef4444', color: '#fff', border: 'none', padding: '0.4rem 0.75rem', borderRadius: 6, cursor: 'pointer' }}>Sair</button>
+    <div style={{ background: '#2E7D32', color: '#ffffff', padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)' }}>
+      <div style={{ fontSize: '0.95rem', fontWeight: '500' }}>Bem-vindo(a), <strong style={{ color: '#A5D6A7' }}>{user.name}</strong></div>
+      <button onClick={handleLogout} style={{ background: '#ffffff', color: '#2E7D32', border: '1px solid #E0E0E0', padding: '0.5rem 1rem', borderRadius: 12, cursor: 'pointer', fontWeight: '600', fontSize: '0.9rem', transition: 'all 0.25s ease' }}>Sair</button>
     </div>
   )
 }
@@ -100,10 +100,10 @@ const Login: React.FC<{ onLogin: (email: string, password: string) => void }> = 
   }
 
   return (
-    <div style={{ minHeight: 'calc(100vh - 160px)', background: 'linear-gradient(135deg,#ffedd5,#fffbeb)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem 1rem' }}>
+    <div style={{ minHeight: 'calc(100vh - 160px)', background: '#F1F8E9', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem 1rem' }}>
       <div style={{ width: '100%', maxWidth: 460, background: '#ffffff', borderRadius: 16, boxShadow: '0 10px 30px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
-        <div style={{ padding: '1.25rem 1rem', background: '#ff6b35', color: '#fff' }}>
-          <h2 style={{ margin: 0, textAlign: 'center' }}>Entrar</h2>
+        <div style={{ padding: '1.5rem 1rem', background: '#2E7D32', color: '#fff' }}>
+          <h2 style={{ margin: 0, textAlign: 'center', fontFamily: 'Merriweather, serif', fontSize: '1.5rem' }}>Entrar</h2>
         </div>
         <div style={{ padding: '1.25rem 1rem' }}>
           {error && <div style={{ background: '#fee2e2', color: '#991b1b', padding: '0.5rem 0.75rem', borderRadius: 8, marginBottom: '0.75rem' }}>{error}</div>}
@@ -157,7 +157,7 @@ const Cadastro: React.FC<{ onRegister: (data: RegisterPayload) => void }> = ({ o
   }
 
   return (
-    <div style={{ minHeight: 'calc(100vh - 160px)', background: 'linear-gradient(135deg,#ecfeff,#fdf2f8)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem 1rem' }}>
+    <div style={{ minHeight: 'calc(100vh - 160px)', background: '#F1F8E9', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem 1rem' }}>
       <div style={{ width: '100%', maxWidth: 560, background: '#ffffff', borderRadius: 16, boxShadow: '0 10px 30px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
         <div style={{ padding: '1.25rem 1rem', background: '#2a9d8f', color: '#fff' }}>
           <h2 style={{ margin: 0, textAlign: 'center' }}>Cadastro</h2>
