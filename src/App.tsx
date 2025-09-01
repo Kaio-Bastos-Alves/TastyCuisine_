@@ -10,7 +10,6 @@ import Contato from './pages/Contato'
 import Receitas from './pages/Receitas'
 import Perfil from './pages/Perfil'
 import Sobre from './pages/Sobre'
-import PorIngredientes from './pages/PorIngredientes'
 import Consulta from './pages/Consulta'
 import Restaurantes from './pages/Restaurantes'
 import './styles/perfil.css'
@@ -299,9 +298,7 @@ const App: React.FC = () => {
               <Route path="/contato" element={<RequireAuth><Contato /></RequireAuth>} />
               <Route path="/receitas" element={<RequireAuth><Receitas /></RequireAuth>} />
               <Route path="/perfil" element={<RequireAuth><Perfil /></RequireAuth>} />
-              <Route path="/por-ingredientes" element={<RequireAuth><PorIngredientes /></RequireAuth>} />
-              <Route path="/dicas-saudaveis" element={<RequireAuth><div>Dicas Saudáveis - Em desenvolvimento</div></RequireAuth>} />
-              <Route path="/chefes" element={<RequireAuth><div>Chefes - Em desenvolvimento</div></RequireAuth>} />
+                                          <Route path="/chefes" element={<RequireAuth><div>Chefes - Em desenvolvimento</div></RequireAuth>} />
               <Route path="/restaurantes" element={<RequireAuth><Restaurantes /></RequireAuth>} />
               <Route path="/consulta" element={<RequireAuth><Consulta /></RequireAuth>} />
               <Route path="/sobre" element={<RequireAuth><Sobre /></RequireAuth>} />

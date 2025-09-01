@@ -9,9 +9,7 @@ const Header: React.FC = () => {
         <ul className="menu">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/receitas">Receitas</Link></li>
-          <li><Link to="/por-ingredientes">Por Ingredientes</Link></li>
-          <li><Link to="/dicas-saudaveis">Dicas Saudáveis</Link></li>
-          <li><Link to="/chefes">Chefes</Link></li>
+                    <li><Link to="/chefes">Chefes</Link></li>
           <li><Link to="/restaurantes">Restaurantes</Link></li>
           <li><Link to="/consulta">Consulta</Link></li>
           <li><Link to="/sobre">Sobre</Link></li>
