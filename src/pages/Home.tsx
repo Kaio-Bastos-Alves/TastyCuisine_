@@ -18,6 +18,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate()
   const { favoritos, toggleFavorito } = useFavoritos()
   const rapidasRef = useRef<HTMLDivElement>(null)
+  const [searchTerm, setSearchTerm] = useState('')
   
   const [scrollProgress, setScrollProgress] = useState({
     rapidas: 0
@@ -116,14 +117,20 @@ const Home: React.FC = () => {
       </section>
 
       <section className="search-bar">
-        <form className="search-form">
-          <input type="text" placeholder="Buscar por ingrediente ou tipo de receita saudável…" />
-          <button type="submit" className="search-icon" aria-label="Buscar">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-              <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+        <form className="search-form" onSubmit={(e) => {
+          e.preventDefault()
+          if (searchTerm.trim()) {
+            navigate(`/receitas?search=${encodeURIComponent(searchTerm.trim())}`)
+          } else {
+            navigate('/receitas')
+          }
+        }}>
+          <input 
+            type="text" 
+            placeholder="Buscar por ingrediente ou tipo de receita saudável…" 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </form>
       </section>
 
@@ -178,6 +185,7 @@ const Home: React.FC = () => {
             ›
           </button>
         </div>
+
         <div className="scroll-progress-container">
           <div 
             className="scroll-progress-bar"
@@ -185,8 +193,8 @@ const Home: React.FC = () => {
               const rect = e.currentTarget.getBoundingClientRect()
               const clickX = e.clientX - rect.left
               handleProgressBarClick(rapidasRef, clickX, rect.width)
-            }}
-          >
+            }}>
+              
             <div 
               className="scroll-progress-thumb" 
               style={{ left: `${scrollProgress.rapidas}%` }}

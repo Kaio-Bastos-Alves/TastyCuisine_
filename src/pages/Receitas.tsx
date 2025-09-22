@@ -1,4 +1,6 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { useFavoritos } from '../contexts/FavoritosContext'
 import { MOCK_RECIPES } from '../data/recipes'
 
@@ -14,9 +16,17 @@ const CATEGORIES = [
 ]
 
 const Receitas: React.FC = () => {
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const [busca, setBusca] = useState('')
   const [categoria, setCategoria] = useState<string>('Todos')
   const { favoritos, toggleFavorito } = useFavoritos()
+  const [searchTerm, setSearchTerm] = useState('')
+
+  useEffect(() => {
+    const searchParam = searchParams.get('search')
+    setBusca(searchParam || '')
+  }, [searchParams])
 
   const receitasFiltradas = useMemo(() => {
     return MOCK_RECIPES.filter(r => {
@@ -30,20 +40,21 @@ const Receitas: React.FC = () => {
     <main className="receitas-main">
       <h1>Receitas</h1>
 
-      <section className="search-bar" style={{ paddingTop: 0 }}>
-        <form className="search-form" onSubmit={e => e.preventDefault()}>
-          <input
-            type="text"
-            placeholder="Buscar receita por nome..."
-            value={busca}
-            onChange={e => setBusca(e.target.value)}
+      <section className="search-bar">
+        <form className="search-form" onSubmit={(e) => {
+          e.preventDefault()
+          if (searchTerm.trim()) {
+            navigate(`/receitas?search=${encodeURIComponent(searchTerm.trim())}`)
+          } else {
+            navigate('/receitas')
+          }
+        }}>
+          <input 
+            type="text" 
+            placeholder="Buscar por uma receita..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button type="submit" className="search-icon" aria-label="Buscar">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-              <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
         </form>
       </section>
 

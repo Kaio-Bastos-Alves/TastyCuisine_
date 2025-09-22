@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import placeholderImg from '../assets/peixe.svg'
 
 // Tipo do restaurante
@@ -11,10 +11,13 @@ interface Restaurant {
   priceRange: string
   address: string
   image: string
+
 }
 
 // Mock de restaurantes (imagens livres do Unsplash)
 const RESTAURANTS: Restaurant[] = [
+  
+  
   {
     id: 1,
     name: 'Verde & Sabor',
@@ -98,22 +101,41 @@ const RESTAURANTS: Restaurant[] = [
 ]
 
 const Restaurantes: React.FC = () => {
+  const [busca, setBusca] = useState('')
   const toMapsUrl = (address: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+
+  const restaurantesFiltrados = useMemo(() => {
+    return RESTAURANTS.filter(r => 
+      r.name.toLowerCase().includes(busca.toLowerCase()) ||
+      r.cuisine.toLowerCase().includes(busca.toLowerCase())
+    )
+  }, [busca])
 
   return (
     <main className="container">
       <h1 className="titulo">Restaurantes</h1>
       <p className="subtitulo">Descubra lugares bem avaliados e abra o mapa para chegar até eles</p>
 
-      <section className="grid-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',  gap: '1rem' }}>
-        {RESTAURANTS.map(r => (
-          <article key={r.id} className="card" role="article" aria-label={r.name} style={{ display: 'flex', flexDirection: 'column', minHeight: 420 }}>
+      <section className="search-bar" style={{ paddingTop: 0 }}>
+        <form className="search-form" onSubmit={e => e.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Buscar restaurante por nome ou tipo de culinária..."
+            value={busca}
+            onChange={e => setBusca(e.target.value)}
+          />
+        </form>
+      </section>
+
+      <section className="grid-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(300px, 1fr))', gap: '2rem', maxWidth: '9999', margin: '0 auto' }}>
+        {restaurantesFiltrados.map(r => (
+          <article key={r.id} className="card" role="article" aria-label={r.name} style={{ display: 'flex', flexDirection: 'column', minHeight: 380, padding: '1.5rem' }}>
             <img 
               src={r.image} 
               alt={r.name} 
               loading="lazy"
               decoding="async"
-              style={{ width: '100%', height: 180, objectFit: 'cover', borderRadius: 12 }}
+              style={{ width: '100%', height: 220, objectFit: 'cover', borderRadius: 12 }}
               onError={(e) => { e.currentTarget.src = placeholderImg }}
             />
             <h3 style={{ margin: '0.5rem 0', color: 'var(--accent-lilac)' }}>{r.name}</h3>
@@ -132,6 +154,12 @@ const Restaurantes: React.FC = () => {
             </a>
           </article>
         ))}
+        
+        {restaurantesFiltrados.length === 0 && (
+          <p style={{ gridColumn: '1/-1', textAlign: 'center', color: '#777', fontSize: '1.1rem', padding: '2rem' }}>
+            Nenhum restaurante encontrado com os filtros atuais.
+          </p>
+        )}
       </section>
     </main>
   )

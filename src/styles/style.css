@@ -265,12 +265,11 @@ nav ul {
   display: flex;
   justify-content: center;
   padding: var(--spacing-2xl);
-  background: var(--bg-secondary);
 }
 
 .search-form {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
 }
 
@@ -750,21 +749,23 @@ footer h3 {
 /* Grid Layouts */
 .grid-receitas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-xl);
   padding: var(--spacing-lg) 0;
 }
 
 .grid-receitas .card-receita {
   width: 100%;
-  min-width: 0;
-  max-width: 100%;
+  min-width: 280px;
+  max-width: 320px;
+  justify-self: center;
 }
 
 .grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: var(--spacing-lg);
+  justify-content: center;
 }
 
 .card {
