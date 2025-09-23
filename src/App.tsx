@@ -13,6 +13,7 @@ import Sobre from './pages/Sobre'
 import PorIngredientes from './pages/PorIngredientes'
 import Consulta from './pages/Consulta'
 import Restaurantes from './pages/Restaurantes'
+import ReceitaDetalhes from './pages/ReceitaDetalhes'
 import './styles/perfil.css'
 
 // Tipos básicos de usuário
@@ -298,6 +299,7 @@ const App: React.FC = () => {
               <Route path="/publicar" element={<RequireAuth><Publicar /></RequireAuth>} />
               <Route path="/contato" element={<RequireAuth><Contato /></RequireAuth>} />
               <Route path="/receitas" element={<RequireAuth><Receitas /></RequireAuth>} />
+              <Route path="/receitas/:id" element={<RequireAuth><ReceitaDetalhes /></RequireAuth>} />
               <Route path="/perfil" element={<RequireAuth><Perfil /></RequireAuth>} />
               <Route path="/por-ingredientes" element={<RequireAuth><PorIngredientes /></RequireAuth>} />
               <Route path="/dicas-saudaveis" element={<RequireAuth><div>Dicas Saudáveis - Em desenvolvimento</div></RequireAuth>} />

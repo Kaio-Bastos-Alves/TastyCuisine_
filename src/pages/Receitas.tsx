@@ -90,7 +90,7 @@ const Receitas: React.FC = () => {
               <span>⚙ {r.difficulty}</span>
               <span>❤ {r.likes}</span>
             </div>
-            <button className="ver-receita" onClick={() => alert('Página de detalhes em desenvolvimento')}>Ver Receita</button>
+            <button className="ver-receita" onClick={() => navigate(`/receitas/${r.id}`)}>Ver Receita</button>
             <span
               className={`favorito ${favoritos.has(r.id) ? 'ativo' : ''}`}
               title={favoritos.has(r.id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
