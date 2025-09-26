@@ -385,23 +385,79 @@ section h3 {
 }
 
 .carrossel-btn {
-  background: var(--primary-green);
+  background: transparent;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  color: var(--white);
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  color: var(--primary-green);
   cursor: pointer;
-  flex-shrink: 0;
   transition: var(--transition-medium);
-  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  will-change: transform, box-shadow;
+  flex-shrink: 0;
+  position: relative;
+}
+.carrossel-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--primary-green);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
-.carrossel-btn:hover {
-  background: var(--primary-light);
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4);
+.carrossel-btn:hover:not(:disabled) {
+  background: transparent;
+  color: var(--primary-light);
+}
+.carrossel-btn:hover:not(:disabled)::after {
+  border-color: var(--primary-light);
+}
+
+.carrossel-btn.prev { margin-right: 0; }
+.carrossel-btn.next { margin-left: 0; }
+
+.carrossel-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.carrossel-btn:focus-visible {
+  outline: 3px solid rgba(46, 125, 50, 0.45);
+  outline-offset: 2px;
+}
+
+.carrossel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: transparent;
+  color: var(--border-medium);
+  box-shadow: none;
+}
+.carrossel-btn:disabled::after {
+  border-color: var(--border-medium);
+}
+
+@media (max-width: 480px) {
+  .carrossel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .carrossel-btn::after {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Recipe Cards */
@@ -605,6 +661,95 @@ section h3 {
   color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+/* Ingredientes da Natureza - Cards estilizados */
+.ingredientes .card {
+  width: 180px;
+  min-width: 180px;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.ingredientes .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-medium);
+  border-color: var(--primary-green);
+}
+
+.ingredientes .img-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(65% 65% at 50% 40%, rgba(165, 214, 167, 0.35) 0%, rgba(165, 214, 167, 0.15) 60%, transparent 100%);
+  border: 2px solid var(--accent-mint);
+  box-shadow: inset 0 2px 8px var(--shadow-light);
+  transition: var(--transition-medium);
+}
+
+.ingredientes .img-placeholder img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+}
+
+.ingredientes .card:hover .img-placeholder {
+  transform: scale(1.04);
+  border-color: var(--primary-green);
+}
+
+.ingredientes .card p {
+  margin-top: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Responsivo para a seção de ingredientes */
+@media (max-width: 768px) {
+  .ingredientes .card {
+    width: 160px;
+    min-width: 160px;
+  }
+  .ingredientes .img-placeholder {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ingredientes .scroll-h {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-md);
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-md);
+  }
+  .ingredientes .scroll-h::-webkit-scrollbar { height: 6px; }
+  .ingredientes .scroll-h::-webkit-scrollbar-thumb { background: var(--accent-mint); border-radius: 6px; }
+
+  .ingredientes .card {
+    width: 150px;
+    min-width: 150px;
+    scroll-snap-align: start;
+  }
 }
 
 /* Testimonials */
